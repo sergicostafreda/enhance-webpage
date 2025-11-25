@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ENHANCE Brain Health Study</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --accent: #0f6a8d;
+      --accent-light: #e2f2f8;
+      --text: #1f1f1f;
+      --muted: #4d4d4d;
+      --card: #ffffff;
+      --bg: #f7f8f9;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    header.hero {
+      padding: 2.5rem clamp(1rem, 4vw, 4rem);
+      background: #fff;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      align-items: center;
+      border-bottom: 1px solid #e1e4e8;
+    }
+    .top-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
+    }
+    .top-logos img {
+      max-height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+      background: #fff;
+      padding: 0.4rem 0.6rem;
+      border-radius: 8px;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    h1 {
+      margin: 0.4rem 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--accent);
+    }
+    .hero p {
+      margin: 0.4rem 0 1rem;
+      max-width: 520px;
+    }
+    .contact-help {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      background: var(--accent-light);
+      border-radius: 12px;
+      font-size: 0.95rem;
+    }
+    .contact-help a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .cta {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border-radius: 999px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .cta[aria-disabled="true"] {
+      opacity: 0.75;
+      cursor: not-allowed;
+    }
+    main {
+      padding: clamp(1.5rem, 4vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    section {
+      background: var(--card);
+      padding: clamp(1.25rem, 3vw, 2.5rem);
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(15, 106, 141, 0.08);
+    }
+    section h2 {
+      margin-top: 0;
+      color: var(--accent);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+    }
+    .key-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      border: 1px solid #e3e7eb;
+      border-radius: 16px;
+      padding: 1.2rem;
+      background: var(--accent-light);
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.1rem;
+    }
+    ul.checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    ul.checklist li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.4rem;
+      position: relative;
+    }
+    ul.checklist li::before {
+      content: "✓";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
+    .map-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .map-container {
+      width: 100%;
+    }
+    .site-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .site-list li {
+      border: 1px solid #e3e7eb;
+      border-radius: 12px;
+      padding: 0.9rem;
+    }
+    .site-list li strong {
+      display: block;
+      color: var(--accent);
+    }
+    .site-list li span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    footer {
+      padding: 2rem clamp(1.5rem, 4vw, 4rem) 4rem;
+      text-align: center;
+      color: var(--muted);
+    }
+    .logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .logos img {
+      max-height: 55px;
+      object-fit: contain;
+      filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+      background: #fff;
+      padding: 0.5rem 0.8rem;
+      border-radius: 10px;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .warning-box {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: #fff3cd;
+      border-left: 4px solid #ff9800;
+      border-radius: 8px;
+    }
+    .warning-box p {
+      margin: 0.5rem 0;
+    }
+    .contact-callout {
+      background: var(--accent-light);
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 1rem;
+    }
+    .contact-callout p {
+      margin: 0.5rem 0;
+    }
+    .contact-callout a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      header.hero {
+        padding: 1.8rem;
+      }
+      section {
+        padding: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <div class="top-logos">
+        <img src="assets/UCLlogo.png" alt="UCL logo" />
+        <img src="assets/NLFTlogo.png" alt="North London NHS Foundation Trust logo" />
+        <img src="assets/NIHRlogo.png" alt="NIHR logo" />
+      </div>
+      <p class="eyebrow">ENHANCE brain health study</p>
+      <h1>Want to keep your brain healthy?</h1>
+      <p>
+        If you're aged 60–80, you can take part in a study on how small lifestyle changes can help brain health.
+      </p>
+      <a class="cta" href="coming-soon.html" role="button">
+        Check if you can join (takes about 5 minutes)
+      </a>
+      <p class="contact-help">
+        <strong>Prefer to talk to us?</strong><br>
+        📞 Call <strong>020 8133 1990</strong> or email <a href="mailto:enhance@ucl.ac.uk">enhance@ucl.ac.uk</a>
+      </p>
+    </div>
+    <div>
+      <img src="assets/EnhanceTabletPic.png" alt="Illustration of the ENHANCE tablet app" />
+    </div>
+  </header>
+  <main>
+    <section id="involved">
+      <h2>What's involved in the study</h2>
+      <p>
+        The ENHANCE study is testing whether a simple lifestyle programme can help people aged 60–80 keep their brains healthy as they get older.
+      </p>
+      <p>
+        <strong>The study is run by researchers at University College London (UCL), University of Exeter, Queen Mary University of London, and University of Hull, working with North London NHS Foundation Trust. It is funded by the National Institute for Health and Care Research (NIHR).</strong>
+      </p>
+
+      <h3 style="margin-top: 2rem; color: var(--accent);">🏥 Free Health Check</h3>
+      <p>You'll get a health check looking at daily habits related to brain health.</p>
+
+      <h3 style="margin-top: 1.5rem; color: var(--accent);">📱 Personalised Advice</h3>
+      <p>Everyone receives clear advice on simple steps that may help to keep the brain healthy.</p>
+
+      <h3 style="margin-top: 1.5rem; color: var(--accent);">🎲 What Happens Next</h3>
+      <p>Everyone gets a free health check and advice on keeping their brain healthy. Some people will also get a tablet, app, and coach to help them make changes. A computer randomly decides who gets what, to make sure the study is fair. This is how good research works. Everyone contributes important information, whatever group they're in.</p>
+
+      <h3 style="margin-top: 1.5rem; color: var(--accent);">📊 Vouchers and Travel</h3>
+      <p>You will receive shopping vouchers for your time, and we cover reasonable travel costs.</p>
+
+      <h3 style="margin-top: 1.5rem; color: var(--accent);">⏱️ Length of Study</h3>
+      <p>About 3 months. We check in with you at the end to see how you are getting on.</p>
+
+      <h3 style="margin-top: 1.5rem; color: var(--accent);">💪 What You'll Do</h3>
+      <p>If your results suggest a few areas to work on, you'll learn which daily habits can make a difference to your brain health and get friendly coaching and simple tools to help you build new, healthy routines. These can include:</p>
+      <ul style="margin-left: 1.5rem;">
+        <li>Being more active in ways that suit you</li>
+        <li>Eating a bit healthier</li>
+        <li>Looking after hearing and mood</li>
+        <li>Staying socially connected</li>
+      </ul>
+
+      <div class="warning-box">
+        <p><strong>⚠️ Important to know</strong></p>
+        <p>This is a research study. You may not benefit directly, but your participation will help us learn how to better support brain health in the future.</p>
+      </div>
+    </section>
+
+    <section id="who-can-join">
+      <h2>Who can take part?</h2>
+      <p>You may be able to join if you:</p>
+      <ul style="margin-left: 1.5rem;">
+        <li>Are aged 60–80</li>
+        <li>Are registered with a participating GP practice, or heard about us at an event, NHS clinic, or online</li>
+        <li>Meet a few simple criteria linked to brain health (we will check these with you)</li>
+      </ul>
+      <p><strong>Not everyone will be suitable. The best way to find out is to complete our short form or give us a call.</strong></p>
+    </section>
+
+    <section id="sites">
+      <h2>Where we are recruiting</h2>
+      <p>
+        Check the map or list to see if we are currently working with a team near you.
+        All visits happen through our local NHS partners.
+      </p>
+      <div class="map-wrapper">
+        <div class="map-container">
+          <!-- TEAM: Replace this iframe with your Google My Maps embed code -->
+          <!-- Instructions:
+               1. Go to Google My Maps (https://www.google.com/mymaps)
+               2. Create a new map and add markers for all ENHANCE recruiting sites
+               3. Click "Share" then "Embed on my site"
+               4. Copy the iframe code and paste it here, replacing this placeholder
+          -->
+          <iframe
+            src="about:blank"
+            width="100%"
+            height="400"
+            style="border:1px solid #d1d7dc; border-radius:16px;"
+            title="Map of ENHANCE recruiting sites">
+          </iframe>
+          <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--muted);">
+            <em>Map placeholder - add your Google My Maps embed code in the HTML</em>
+          </p>
+        </div>
+        <div>
+          <h3 style="margin-top: 0; color: var(--accent);">Our recruiting sites:</h3>
+          <ul class="site-list">
+            <li><strong>North London NHS Foundation Trust</strong><span>Regis Road, London NW5 3EG</span></li>
+            <li><strong>Humber NHS Teaching Trust</strong><span>Hull HU10 6FE</span></li>
+            <li><strong>The Rise Group Practice</strong><span>London N19 3YU</span></li>
+            <li><strong>Mathukia Surgery</strong><span>281 Ilford Lane, Ilford IG1 2SF</span></li>
+            <li><strong>Knutsford Medical Partnership</strong><span>Knutsford WA16 0LY</span></li>
+            <li><strong>Coquet Medical Group</strong><span>Morpeth NE65 9SF</span></li>
+            <li><strong>Widdrington (Northumbria Primary Care)</strong><span>Morpeth NE65 9PR</span></li>
+            <li><strong>Living Well Partnership</strong><span>Hampshire SO19 9GH</span></li>
+            <li><strong>The Practice of Health</strong><span>Barry CF63 1BA</span></li>
+            <li><strong>Llan Healthcare</strong><span>Cardiff CF23 9PF</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Questions? We're happy to help.</h2>
+
+      <div class="contact-callout">
+        <p style="font-size: 1.1rem; margin-top: 0;">
+          <strong>💬 Don't like forms? That's absolutely fine.</strong>
+        </p>
+        <p>Just give us a call and we'll go through the questions together in a friendly chat.</p>
+
+        <div style="margin-top: 1.5rem;">
+          <p><strong>📧 Email:</strong> <a href="mailto:enhance@ucl.ac.uk">enhance@ucl.ac.uk</a></p>
+          <p><strong>☎️ Phone:</strong> <a href="tel:02081331990">020 8133 1990</a></p>
+          <p><strong>📱 Text:</strong> Send 'ENHANCE' to <strong>07800 000000</strong> and we'll call you back</p>
+        </div>
+
+        <p style="margin-top: 1.5rem; margin-bottom: 0;">
+          <em>Prefer post or an in-person chat? Let us know and we'll arrange a time that works for you.</em>
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="logos">
+      <img src="assets/UCLlogo.png" alt="UCL logo" />
+      <img src="assets/NLFTlogo.png" alt="North London NHS Foundation Trust logo" />
+      <img src="assets/NIHRlogo.png" alt="NIHR logo" />
+    </div>
+    <p>Funded by the National Institute for Health and Care Research (NIHR).</p>
+    <p>Sponsored by North London NHS Foundation Trust.</p>
+  </footer>
+
+</body>
+</html>
