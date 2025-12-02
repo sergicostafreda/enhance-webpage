@@ -22,7 +22,8 @@
       font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.6;
+      font-size: 18px;
     }
     img {
       max-width: 100%;
@@ -54,8 +55,8 @@
     }
     .eyebrow {
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 1rem;
+      letter-spacing: 0.08em;
+      font-size: 1.05rem;
       font-weight: 600;
       color: var(--muted);
     }
@@ -70,10 +71,11 @@
     }
     .contact-help {
       margin-top: 1.2rem;
-      padding: 1rem;
+      padding: 1.2rem;
       background: var(--accent-light);
       border-radius: 12px;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      line-height: 1.8;
     }
     .contact-help a {
       color: var(--accent);
@@ -83,12 +85,15 @@
       background: var(--accent);
       color: #fff;
       text-decoration: none;
-      padding: 0.9rem 1.5rem;
+      padding: 1rem 1.8rem;
       border-radius: 999px;
       font-weight: 600;
+      font-size: 1.05rem;
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
+      min-height: 48px;
+      justify-content: center;
     }
     .cta[aria-disabled="true"] {
       opacity: 0.75;
@@ -111,7 +116,8 @@
     section h2 {
       margin-top: 0;
       color: var(--accent);
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      line-height: 1.3;
     }
     .key-points {
       display: grid;
@@ -166,15 +172,17 @@
     .site-list li {
       border: 1px solid #e3e7eb;
       border-radius: 12px;
-      padding: 0.9rem;
+      padding: 1rem;
     }
     .site-list li strong {
       display: block;
       color: var(--accent);
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
     }
     .site-list li span {
       color: var(--muted);
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
     footer {
       padding: 2rem clamp(1.5rem, 4vw, 4rem) 4rem;
@@ -223,6 +231,20 @@
     .contact-callout a {
       color: var(--accent);
       text-decoration: underline;
+      font-weight: 600;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    a:hover, a:focus {
+      text-decoration-thickness: 2px;
+    }
+    a:focus {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 2px;
     }
     @media (max-width: 600px) {
       header.hero {
@@ -244,6 +266,13 @@
       .eyebrow {
         font-size: 1.15rem;
       }
+      body {
+        font-size: 17px;
+      }
+      .cta {
+        width: 100%;
+        padding: 1.1rem 1.8rem;
+      }
     }
   </style>
 </head>
@@ -251,10 +280,10 @@
   <header class="hero">
     <div>
       <div class="top-logos">
-        <img src="assets/Archive/UCL-lightBlue.jpg" alt="UCL logo" />
-        <img src="assets/Archive/NLFT.png" alt="North London NHS Foundation Trust logo" />
+        <img src="assets/UCL_lightBlue.png" alt="UCL logo" />
+        <img src="assets/NLFT.png" alt="North London NHS Foundation Trust logo" />
         <!--
-        <img src="assets/Archive/NIHR_Logos_Funded-01-Col-Corp_Blu RGB.png" alt="NIHR logo" />
+        <img src="assets/NIHR_Logos_Funded_01_Col_Corp_Blu_RGB.png" alt="NIHR logo" />
         -->
       </div>
       <p class="eyebrow">ENHANCE brain health study</p>
@@ -267,13 +296,12 @@
       </a>
       <p class="contact-help">
         <strong>Prefer to talk to us?</strong><br>
-        📞 Call <strong>020 8133 1990</strong> (office hours)<br>
-        📱 Send us an SMS at <strong>07800 000000</strong> and we'll reply to you<br>
+        📱 Call or text <a href="tel:07760574628"><strong>07760 574628</strong></a> — just text 'hello' and we'll get in touch<br>
         📧 Email <a href="mailto:enhance@ucl.ac.uk">enhance@ucl.ac.uk</a>
       </p>
     </div>
     <div>
-      <img src="assets/Archive/Tablet-ENHANCE.jpg" alt="Illustration of the ENHANCE tablet app" />
+      <img src="assets/Tablet_ENHANCE.jpg" alt="Illustration of the ENHANCE tablet app" />
     </div>
   </header>
   <main>
@@ -317,7 +345,7 @@
     </section>
     
     <section>
-      <img src="assets/Archive/OlderPeopleWithTablets.png"
+      <img src="assets/OlderPeopleWithTablets.jpg"
            alt="Illustration of older adults using digital devices"
            style="max-width: 100%; height: auto; display: block; margin: 0 auto;" />
     </section>
@@ -342,7 +370,7 @@
       <div class="map-wrapper">
         <div class="map-container">
           <img
-            src="assets/Archive/UK-ENHANCE-map.png"
+            src="assets/UK-ENHANCE-map.png"
             alt="DRAFT: Map of ENHANCE recruiting sites"
             style="width: 100%; height: auto; border-radius: 16px; border: 3px dashed #ff9800;"
           />
@@ -384,8 +412,11 @@
 
         <div style="margin-top: 1.5rem;">
           <p><strong>📧 Email:</strong> <a href="mailto:enhance@ucl.ac.uk">enhance@ucl.ac.uk</a></p>
-          <p><strong>☎️ Phone:</strong> <a href="tel:02081331990">020 8133 1990</a> (office hours)</p>
-          <p><strong>📱 SMS:</strong> Send us a text at <strong>07800 000000</strong> and we'll reply to you</p>
+          <p><strong>📱 Call or text:</strong> <a href="tel:07760574628">07760 574628</a></p>
+          <p style="font-size: 0.95rem; color: var(--muted); margin-top: 0.5rem;">
+            <strong>Quick text?</strong> Just send 'hello' or 'hi ENHANCE' and we'll get in touch with you.<br>
+            We reply during working hours (Mon-Fri, 9am-5pm), but you can leave a message anytime.
+          </p>
         </div>
 
         <p style="margin-top: 1.5rem; margin-bottom: 0;">
@@ -396,9 +427,9 @@
   </main>
   <footer>
     <div class="logos">
-      <img src="assets/Archive/UCL-lightBlue.jpg" alt="UCL logo" />
-      <img src="assets/Archive/NLFT.png" alt="North London NHS Foundation Trust logo" />
-      <img src="assets/Archive/NIHR_Logos_Funded-01-Col-Corp_Blu RGB.png" alt="NIHR logo" />
+      <img src="assets/UCL_lightBlue.png" alt="UCL logo" />
+      <img src="assets/NLFT.png" alt="North London NHS Foundation Trust logo" />
+      <img src="assets/NIHR_Logos_Funded_01_Col_Corp_Blu_RGB.png" alt="NIHR logo" />
     </div>
     <p>Funded by the National Institute for Health and Care Research (NIHR).</p>
     <p>Sponsored by North London NHS Foundation Trust.</p>
